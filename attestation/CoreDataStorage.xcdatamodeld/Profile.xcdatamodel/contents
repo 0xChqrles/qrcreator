@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19G73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Attestation" representedClassName=".Attestation" syncable="YES">
+        <attribute name="reasons" optional="YES" attributeType="Transformable"/>
+        <relationship name="profile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Profile"/>
+    </entity>
+    <entity name="Profile" representedClassName=".Profile" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String"/>
+        <attribute name="birthCity" optional="YES" attributeType="String"/>
+        <attribute name="birthDate" optional="YES" attributeType="String"/>
+        <attribute name="city" optional="YES" attributeType="String"/>
+        <attribute name="firstName" optional="YES" attributeType="String"/>
+        <attribute name="lastName" optional="YES" attributeType="String"/>
+        <attribute name="zipCode" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Attestation" positionX="-54" positionY="54" width="128" height="73"/>
+        <element name="Profile" positionX="-63" positionY="-18" width="128" height="148"/>
+    </elements>
+</model>
