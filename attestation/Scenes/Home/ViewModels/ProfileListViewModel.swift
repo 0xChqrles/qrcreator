@@ -43,13 +43,7 @@ class ProfileListViewModel: NSObject, ProfileListViewModeling {
 	private let coreDataAPIService: CoreDataAPIService!
 	private let managedObjectContext = CoreDataStorage.shared.managedObjectContext
 
-	private var profiles = [Profile]() {
-		didSet {
-			if profiles != oldValue {
-				reloadTableView?()
-			}
-		}
-	}
+	private var profiles = [Profile]()
 	private var selectedProfiles = Set<String>()
 
 	// MARK: - Public Methods
@@ -74,6 +68,7 @@ extension ProfileListViewModel {
 				print(error.localizedDescription)
 			} else if let profiles = profiles {
 				self.profiles = profiles
+				self.reloadTableView?()
 			}
 		}
 	}

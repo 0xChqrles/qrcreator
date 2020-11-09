@@ -61,7 +61,7 @@ class HomeViewController: UIViewController {
 		// Outing Button
 		profileListViewModel.selectionDidBegin = selectFirstProfile
 		profileListViewModel.selectionDidEnd = unselectLastProfile
-		profileListViewModel.deleteProfiles = deleteCells
+		profileListViewModel.deleteProfiles = deleteSelectedCells
 		outingButton.layer.cornerRadius = 8
 		outingButton.titleLabel?.setText("SORTIR", withSpacing: 2.0)
 		hideTrashAndOutingButton(false)
@@ -111,14 +111,15 @@ extension HomeViewController {
 		tableView.reloadData()
 	}
 
-	private func deleteCells(withUUIDS uuids: Set<String>) {
+	private func deleteSelectedCells(withUUIDS uuids: Set<String>) {
 		var indexPaths = [IndexPath]()
 		for section in 0 ..< tableView.numberOfSections {
 			for row in 0 ..< tableView.numberOfRows(inSection: section) {
 				let indexPath = IndexPath(row: row, section: section)
 
-				if let cellUUID = (tableView.cellForRow(at: indexPath) as? ProfileTableViewCell)?.uuid,
-				   uuids.contains(cellUUID) {
+				if let cell = tableView.cellForRow(at: indexPath) as? ProfileTableViewCell,
+				   cell.isChecked {
+					cell.didSelect()
 					indexPaths.append(indexPath)
 				}
 			}
