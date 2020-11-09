@@ -24,12 +24,6 @@ class TextFieldCell: UITableViewCell, InputCellable {
 	@IBOutlet weak var textField: UITextField!
 
 	// MARK: - Initialization
-	override func layoutSubviews() {
-		super.layoutSubviews()
-
-		backgroundColor = UIColor(named: "Cell")
-	}
-
 	func configure(key: String, defaultValue: String?, valueUpdateHandler: ((_ key: String, _ value: String) -> ())?) {
 		self.key = key
 		textField.text = defaultValue
@@ -37,8 +31,17 @@ class TextFieldCell: UITableViewCell, InputCellable {
 	}
 
 	// MARK: - Public Methods
-	func setTextFieldData(placeholder: String) {
+	func setTextFieldData(placeholder: String, dataType: Form.DataType) {
 		textField.placeholder = placeholder
+		switch dataType {
+		case .text:
+			textField.keyboardType = .default
+		case .digits:
+			textField.keyboardType = .decimalPad
+		}
+
+		textField.autocapitalizationType = .sentences
+		textField.clearButtonMode = .whileEditing
 		textField.delegate = self
 	}
 }

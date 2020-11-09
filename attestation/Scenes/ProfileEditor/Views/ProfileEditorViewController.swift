@@ -17,6 +17,13 @@ class ProfileEditorViewController: UITableViewController {
 	}()
 	private var profileCreationViewModel: ProfileCreationViewModeling
 
+	// MARK: - Actions
+	@objc
+	func addProfile() {
+		profileCreationViewModel.saveProfile()
+		navigationController?.popViewController(animated: true)
+	}
+
 	// MARK: - Initialization
 	init(profileCreationViewModel: ProfileCreationViewModeling) {
 		self.profileCreationViewModel = profileCreationViewModel
@@ -33,12 +40,11 @@ class ProfileEditorViewController: UITableViewController {
 		super.viewDidLoad()
 
 		// setup cells nib
-		setupCellNib(type: TextFieldCell.self, withIdentifier: TextFieldCell.identifier)
-		setupCellNib(type: DatePickerCell.self, withIdentifier: DatePickerCell.identifier)
-		setupCellNib(type: SectionTitleCell.self, withIdentifier: SectionTitleCell.identifier)
+		tableView.setupCellNib(type: TextFieldCell.self, withIdentifier: TextFieldCell.identifier)
+		tableView.setupCellNib(type: DatePickerCell.self, withIdentifier: DatePickerCell.identifier)
+		tableView.setupCellNib(type: SectionTitleCell.self, withIdentifier: SectionTitleCell.identifier)
 
-		title = "Ajouter un profil"
-		navigationController?.navigationBar.topItem?.title = title
+		navigationItem.title = "Ajouter un profil"
 
 		// setup tableView
 		if #available(iOS 13.0, *) {
@@ -59,13 +65,18 @@ class ProfileEditorViewController: UITableViewController {
 		)
 		addButton.isEnabled = false
 		navigationItem.rightBarButtonItem = addButton
+
 		navigationController?.navigationBar.topItem?.backButtonTitle = "Annuler"
 	}
 
-	@objc
-	func addProfile() {
-		profileCreationViewModel.saveProfile()
-		navigationController?.popViewController(animated: true)
+	// MARK: - Deinit
+
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+
+		if isMovingFromParent {
+			profileCreationViewModel.clean()
+		}
 	}
 }
 
@@ -90,9 +101,9 @@ extension ProfileEditorViewController {
 		let cell: InputCellable?
 
 		switch row.input {
-		case let .text(placeholder):
+		case let .text(placeholder, dataType):
 			cell = tableView.dequeueReusableCell(withIdentifier: TextFieldCell.identifier) as? InputCellable
-			(cell as? TextFieldCell)?.setTextFieldData(placeholder: placeholder)
+			(cell as? TextFieldCell)?.setTextFieldData(placeholder: placeholder, dataType: dataType)
 
 		case let .date(title):
 			cell = tableView.dequeueReusableCell(withIdentifier: DatePickerCell.identifier) as? InputCellable

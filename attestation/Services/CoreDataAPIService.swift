@@ -24,4 +24,30 @@ class CoreDataAPIService: NSObject {
 			completion(nil, error)
 		}
 	}
+
+	func clearStorage(forEntity entity: String, withPredicate predicate: NSPredicate? = nil) {
+		let managedObjectContext = CoreDataStorage.shared.managedObjectContext
+		let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+
+		fetchRequest.predicate = predicate
+		if CoreDataStorage.shared.isInMemoryStore {
+			do {
+				let entities = try managedObjectContext.fetch(fetchRequest)
+				for entity in entities {
+					if let entity = entity as? NSManagedObject {
+						managedObjectContext.delete(entity)
+					}
+				}
+			} catch {
+				print(error.localizedDescription)
+			}
+		} else {
+			let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+			do {
+				try managedObjectContext.execute(batchDeleteRequest)
+			} catch {
+				print(error.localizedDescription)
+			}
+		}
+	}
 }

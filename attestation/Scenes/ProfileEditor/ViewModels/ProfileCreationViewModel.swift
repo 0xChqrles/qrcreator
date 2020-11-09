@@ -19,6 +19,7 @@ protocol ProfileCreationViewModeling: class {
 	func value(forKey key: String) -> String?
 	func updateProfile(forKey: String, withValue: String)
 	func saveProfile()
+	func clean()
 }
 
 class ProfileCreationViewModel: ProfileCreationViewModeling {
@@ -27,9 +28,11 @@ class ProfileCreationViewModel: ProfileCreationViewModeling {
 	var updateProfileStatus: ((Bool) -> ())?
 
 	// MARK: - Private Properties
+	// CoreData
+	private let managedObjectContext = CoreDataStorage.shared.managedObjectContext
 	private let coreDataAPIService: CoreDataAPIService!
+
 	private lazy var profile: Profile? = {
-		let managedObjectContext = CoreDataStorage.shared.managedObjectContext
 		if let entityDescription = NSEntityDescription.entity(forEntityName: "Profile", in: managedObjectContext) {
 			return Profile(entity: entityDescription, insertInto: managedObjectContext)
 		}
@@ -65,12 +68,19 @@ extension ProfileCreationViewModel {
 	}
 
 	func saveProfile() {
-		let managedObjectContext = CoreDataStorage.shared.managedObjectContext
 
+		profile?.firstName.capitalizeFirstLetter()
+		profile?.lastName.capitalizeFirstLetter()
+		profile?.city.capitalizeFirstLetter()
+		profile?.birthCity.capitalizeFirstLetter()
 		do {
 			try managedObjectContext.save()
 		} catch {
 			print(error.localizedDescription)
 		}
+	}
+
+	func clean() {
+		managedObjectContext.rollback()
 	}
 }

@@ -5,7 +5,7 @@
 //  Created by Charles Lanier on 03/11/2020.
 //
 
-import Foundation
+import UIKit
 
 class Form {
 
@@ -14,8 +14,13 @@ class Form {
 
 	// MARK: - Enum
 	enum Input {
-		case text(placeholder: String)
+		case text(placeholder: String, dataType: DataType)
 		case date(title: String)
+	}
+
+	enum DataType {
+		case text
+		case digits
 	}
 
 	// MARK: - Initialization

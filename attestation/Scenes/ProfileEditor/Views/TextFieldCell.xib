@@ -18,14 +18,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RS8-jh-8ig">
-                        <rect key="frame" x="16" y="0.0" width="304" height="44"/>
+                        <rect key="frame" x="16" y="0.0" width="296" height="44"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                 </subviews>
                 <constraints>
                     <constraint firstItem="RS8-jh-8ig" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="2VQ-9c-Yaj"/>
-                    <constraint firstAttribute="trailing" secondItem="RS8-jh-8ig" secondAttribute="trailing" id="6MB-ec-1nE"/>
+                    <constraint firstAttribute="trailing" secondItem="RS8-jh-8ig" secondAttribute="trailing" constant="8" id="6MB-ec-1nE"/>
                     <constraint firstItem="RS8-jh-8ig" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ODX-RU-3TD"/>
                     <constraint firstAttribute="bottom" secondItem="RS8-jh-8ig" secondAttribute="bottom" id="TFu-IU-CQk"/>
                 </constraints>

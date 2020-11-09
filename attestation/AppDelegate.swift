@@ -15,7 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.
-		let mainController = AttestationTabBarController() as UIViewController
+		let profileListViewModel = ProfileListViewModel(withAPIService: CoreDataStorage.shared.apiService)
+		let mainController = HomeViewController(profileListViewModel: profileListViewModel) as UIViewController
 		let navigationController = UINavigationController(rootViewController: mainController)
 
 		navigationController.navigationBar.isTranslucent = false

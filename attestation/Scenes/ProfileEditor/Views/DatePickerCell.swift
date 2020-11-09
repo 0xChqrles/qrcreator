@@ -49,12 +49,6 @@ class DatePickerCell: UITableViewCell, InputCellable {
 	@IBOutlet weak var selectedDateLabel: UILabel!
 
 	// MARK: - Initialization
-	override func layoutSubviews() {
-		super.layoutSubviews()
-
-		backgroundColor = UIColor(named: "Cell")
-	}
-
 	func configure(key: String, defaultValue: String?, valueUpdateHandler: ((String, String) -> ())?) {
 		self.key = key
 		if let stringDate = defaultValue,

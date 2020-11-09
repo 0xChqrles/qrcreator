@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="attestation" customModuleProvider="target">
+            <connections>
+                <outlet property="outingButton" destination="mJX-c4-2dN" id="h0D-9p-MNZ"/>
+                <outlet property="outingButtonBottomConstraint" destination="TJT-Zd-srS" id="2EU-vC-Ydt"/>
+                <outlet property="tableView" destination="LfR-GO-KiZ" id="Drg-Tk-G2E"/>
+                <outlet property="view" destination="Hgj-aD-ihZ" id="2UO-MQ-89k"/>
+            </connections>
+        </placeholder>
+        <view contentMode="scaleToFill" id="Hgj-aD-ihZ">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="LfR-GO-KiZ">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJX-c4-2dN">
+                    <rect key="frame" x="107" y="804" width="200" height="50"/>
+                    <color key="backgroundColor" name="SecondColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="1Xs-7q-XVe"/>
+                        <constraint firstAttribute="height" constant="50" id="YBY-9y-T1W"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                    <state key="normal" title="SORTIR">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="paO-rG-YYw"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="LfR-GO-KiZ" secondAttribute="bottom" id="4Za-1w-y6g"/>
+                <constraint firstItem="mJX-c4-2dN" firstAttribute="centerX" secondItem="Hgj-aD-ihZ" secondAttribute="centerX" id="DYK-8a-x2y"/>
+                <constraint firstItem="paO-rG-YYw" firstAttribute="bottom" secondItem="mJX-c4-2dN" secondAttribute="bottom" constant="8" id="TJT-Zd-srS"/>
+                <constraint firstItem="paO-rG-YYw" firstAttribute="trailing" secondItem="LfR-GO-KiZ" secondAttribute="trailing" id="xKI-9G-Z5j"/>
+                <constraint firstItem="LfR-GO-KiZ" firstAttribute="top" secondItem="Hgj-aD-ihZ" secondAttribute="top" id="y1M-c6-kgs"/>
+                <constraint firstItem="LfR-GO-KiZ" firstAttribute="leading" secondItem="paO-rG-YYw" secondAttribute="leading" id="yYu-hD-eSs"/>
+            </constraints>
+            <point key="canvasLocation" x="49" y="-518"/>
+        </view>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+    </objects>
+    <resources>
+        <namedColor name="SecondColor">
+            <color red="0.047058823529411764" green="0.80784313725490198" blue="0.38823529411764707" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

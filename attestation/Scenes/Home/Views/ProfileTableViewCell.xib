@@ -4,35 +4,116 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileCell" rowHeight="70" id="Bcq-OQ-ZsD" customClass="ProfileTableViewCell" customModule="attestation" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileCell" rowHeight="91" id="Bcq-OQ-ZsD" customClass="ProfileTableViewCell" customModule="attestation" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bcq-OQ-ZsD" id="uhA-kG-yAg">
-                <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ac8-4c-fet">
-                        <rect key="frame" x="16" y="12" width="41.5" height="46"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Doe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ac8-4c-fet">
+                        <rect key="frame" x="48" y="12" width="91.5" height="26.5"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="address line" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="utM-JD-ume">
+                        <rect key="frame" x="48" y="42.5" width="350" height="16"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="zipCode and city" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Da9-yh-CLA">
+                        <rect key="frame" x="48" y="58.5" width="102" height="16"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ANs-Qs-Z0J">
+                        <rect key="frame" x="359.5" y="66" width="34.5" height="16"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="attestation" translatesAutoresizingMaskIntoConstraints="NO" id="5uo-Ie-Pmw">
+                                <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
+                                <color key="tintColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="ua6-Sh-A3r"/>
+                                    <constraint firstAttribute="width" constant="16" id="wwm-oj-BHV"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="26" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wjl-s0-nAC">
+                                <rect key="frame" x="20" y="0.5" width="14.5" height="15.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="wjl-s0-nAC" secondAttribute="trailing" id="VYU-di-kxd"/>
+                            <constraint firstAttribute="bottom" secondItem="5uo-Ie-Pmw" secondAttribute="bottom" id="Wlb-li-5jn"/>
+                            <constraint firstItem="5uo-Ie-Pmw" firstAttribute="leading" secondItem="ANs-Qs-Z0J" secondAttribute="leading" id="Ybp-3d-5ee"/>
+                            <constraint firstItem="5uo-Ie-Pmw" firstAttribute="top" secondItem="ANs-Qs-Z0J" secondAttribute="top" id="b4R-EV-b4O"/>
+                            <constraint firstAttribute="bottom" secondItem="wjl-s0-nAC" secondAttribute="bottom" id="dMd-2c-6Ht"/>
+                            <constraint firstItem="wjl-s0-nAC" firstAttribute="leading" secondItem="5uo-Ie-Pmw" secondAttribute="trailing" constant="4" id="gHh-S6-ZE0"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Keq-WY-yLy">
+                        <rect key="frame" x="16" y="0.0" width="16" height="90"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkbox-empty" translatesAutoresizingMaskIntoConstraints="NO" id="wiH-eI-Oh5">
+                                <rect key="frame" x="0.0" y="37" width="16" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="16" id="D8A-UF-L1B"/>
+                                    <constraint firstAttribute="height" constant="16" id="W1J-Nf-NrO"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wiH-eI-Oh5" firstAttribute="leading" secondItem="Keq-WY-yLy" secondAttribute="leading" id="XKY-Ey-1bN"/>
+                            <constraint firstItem="wiH-eI-Oh5" firstAttribute="centerY" secondItem="Keq-WY-yLy" secondAttribute="centerY" id="gWZ-Tv-KZH"/>
+                            <constraint firstAttribute="trailing" secondItem="wiH-eI-Oh5" secondAttribute="trailing" id="kZo-RN-dLg"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Ac8-4c-fet" firstAttribute="leading" secondItem="uhA-kG-yAg" secondAttribute="leading" constant="16" id="2o7-bn-SL1"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Da9-yh-CLA" secondAttribute="bottom" constant="8" id="Bjr-Z6-CLy"/>
                     <constraint firstItem="Ac8-4c-fet" firstAttribute="top" secondItem="uhA-kG-yAg" secondAttribute="top" constant="12" id="CvP-bT-dOu"/>
-                    <constraint firstAttribute="bottom" secondItem="Ac8-4c-fet" secondAttribute="bottom" constant="12" id="hJg-n8-bNK"/>
+                    <constraint firstItem="Ac8-4c-fet" firstAttribute="leading" secondItem="Keq-WY-yLy" secondAttribute="trailing" constant="16" id="EKS-Ry-fhS"/>
+                    <constraint firstAttribute="trailing" secondItem="utM-JD-ume" secondAttribute="trailing" constant="16" id="Hdu-ly-NFZ"/>
+                    <constraint firstItem="Da9-yh-CLA" firstAttribute="top" secondItem="utM-JD-ume" secondAttribute="bottom" id="J5v-Ec-fB7"/>
+                    <constraint firstItem="Da9-yh-CLA" firstAttribute="leading" secondItem="Keq-WY-yLy" secondAttribute="trailing" constant="16" id="JeZ-KL-2Oj"/>
+                    <constraint firstAttribute="bottom" secondItem="ANs-Qs-Z0J" secondAttribute="bottom" constant="8" id="Jga-BJ-A6m"/>
+                    <constraint firstAttribute="bottom" secondItem="Keq-WY-yLy" secondAttribute="bottom" id="YQt-vV-cqF"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="ANs-Qs-Z0J" secondAttribute="trailing" id="ZPC-1u-mXV"/>
+                    <constraint firstItem="utM-JD-ume" firstAttribute="leading" secondItem="Keq-WY-yLy" secondAttribute="trailing" constant="16" id="fnS-ZO-qjf"/>
+                    <constraint firstItem="utM-JD-ume" firstAttribute="top" secondItem="Ac8-4c-fet" secondAttribute="bottom" constant="4" id="kcq-U5-61P"/>
+                    <constraint firstItem="Keq-WY-yLy" firstAttribute="leading" secondItem="uhA-kG-yAg" secondAttribute="leading" constant="16" id="pl2-1V-NmT"/>
+                    <constraint firstItem="Keq-WY-yLy" firstAttribute="top" secondItem="uhA-kG-yAg" secondAttribute="top" id="xFN-eA-3rR"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="addressLabel" destination="utM-JD-ume" id="rVq-hy-5aC"/>
+                <outlet property="attestationIcon" destination="5uo-Ie-Pmw" id="Ca5-hP-GR8"/>
+                <outlet property="checkboxIcon" destination="wiH-eI-Oh5" id="W32-Cm-yDV"/>
                 <outlet property="fullNameLabel" destination="Ac8-4c-fet" id="Jay-K6-dad"/>
+                <outlet property="numberOfAttestationsLabel" destination="wjl-s0-nAC" id="PfG-Ct-y7d"/>
+                <outlet property="zipCodeCityLabel" destination="Da9-yh-CLA" id="Eew-NB-ajs"/>
             </connections>
-            <point key="canvasLocation" x="-515.94202898550725" y="177.45535714285714"/>
+            <point key="canvasLocation" x="-515.94202898550725" y="184.15178571428569"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="attestation" width="21.5" height="30"/>
+        <image name="checkbox-empty" width="16.5" height="16.5"/>
+        <namedColor name="AccentColor">
+            <color red="0.20000000000000001" green="0.95686274509803926" blue="0.54117647058823526" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

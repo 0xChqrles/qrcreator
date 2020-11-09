@@ -7,10 +7,10 @@
 
 import UIKit
 
-extension UITableViewController {
+extension UITableView {
 
 	func setupCellNib<T>(type: T.Type, withIdentifier identifier: String) {
 		let nib = UINib(nibName: String(describing: type.self), bundle: nil)
-		tableView.register(nib, forCellReuseIdentifier: identifier)
+		register(nib, forCellReuseIdentifier: identifier)
 	}
 }

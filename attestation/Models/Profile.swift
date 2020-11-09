@@ -8,6 +8,7 @@
 import CoreData
 
 class Profile: NSManagedObject {
+	@NSManaged var uuid: String
 	@NSManaged var firstName: String
 	@NSManaged var lastName: String
 	@NSManaged var birthDate: String
@@ -15,6 +16,7 @@ class Profile: NSManagedObject {
 	@NSManaged var address: String
 	@NSManaged var city: String
 	@NSManaged var zipCode: String
+	@NSManaged var numberOfAttestations: Int
 
 	var isFulfilled: Bool {
 		return !(firstName.isEmpty
@@ -24,5 +26,11 @@ class Profile: NSManagedObject {
 			|| address.isEmpty
 			|| city.isEmpty
 			|| zipCode.isEmpty)
+	}
+
+	override func awakeFromInsert() {
+		super.awakeFromInsert()
+		setPrimitiveValue(0, forKey: "numberOfAttestations")
+		setPrimitiveValue(UUID().uuidString, forKey: "uuid")
 	}
 }
