@@ -29,7 +29,9 @@ class ProfileEditorViewController: UITableViewController {
 		self.profileCreationViewModel = profileCreationViewModel
 		super.init(style: .grouped)
 
-		self.profileCreationViewModel.updateProfileStatus = updateProfileStatus
+		self.profileCreationViewModel.updateProfileStatus = { [weak self] isProfileValid in
+			self?.updateProfileStatus(isProfileValid)
+		}
 	}
 
 	required init?(coder: NSCoder) {
@@ -69,14 +71,9 @@ class ProfileEditorViewController: UITableViewController {
 		navigationController?.navigationBar.topItem?.backButtonTitle = "Annuler"
 	}
 
-	// MARK: - Deinit
-
 	override func viewWillDisappear(_ animated: Bool) {
 		super.viewWillDisappear(animated)
-
-		if isMovingFromParent {
-			profileCreationViewModel.clean()
-		}
+		profileCreationViewModel.clean()
 	}
 }
 
@@ -112,7 +109,9 @@ extension ProfileEditorViewController {
 
 		if let cell = cell {
 			let value = profileCreationViewModel.value(forKey: row.key)
-			cell.configure(key: row.key, defaultValue: value, valueUpdateHandler: cellDidUpdate)
+			cell.configure(key: row.key, defaultValue: value) { [weak self] key, value in
+				self?.cellDidUpdate(forKey: key, withValue: value)
+			}
 			return cell
 		}
 		return UITableViewCell()

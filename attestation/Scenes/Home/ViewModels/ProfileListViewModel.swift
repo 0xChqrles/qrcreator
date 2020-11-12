@@ -17,6 +17,9 @@ protocol ProfileListViewModeling: class {
 	var deleteProfiles: ((Set<String>) -> ())? { get set }
 
 	// MARK: - Public Properties
+	// View Models
+	var attestationGenerationViewModel: AttestationSetCreationViewModeling { get }
+
 	var numberOfProfiles: Int { get }
 
 	// MARK: - Initialization
@@ -44,9 +47,21 @@ class ProfileListViewModel: NSObject, ProfileListViewModeling {
 	private let managedObjectContext = CoreDataStorage.shared.managedObjectContext
 
 	private var profiles = [Profile]()
-	private var selectedProfiles = Set<String>()
+	private var selectedProfilesUUID = Set<String>()
+	private var selectedProfiles: [Profile] {
+		return self.profiles.filter {
+			selectedProfilesUUID.contains($0.uuid)
+		}
+	}
 
-	// MARK: - Public Methods
+	// MARK: - Public Properties
+	// View Models
+	var attestationGenerationViewModel: AttestationSetCreationViewModeling {
+		let viewModel = AttestationSetCreationViewModel()
+		viewModel.setProfiles(selectedProfiles)
+		return viewModel
+	}
+
 	var numberOfProfiles: Int {
 		return profiles.count
 	}
@@ -63,13 +78,9 @@ extension ProfileListViewModel {
 
 	// Fetching
 	func fetchProfiles() {
-		coreDataAPIService.fetchEntities(ofType: Profile.self, withName: "Profile") { profiles, error in
-			if let error = error {
-				print(error.localizedDescription)
-			} else if let profiles = profiles {
-				self.profiles = profiles
-				self.reloadTableView?()
-			}
+		if let profiles = coreDataAPIService.fetchEntities(ofType: Profile.self, withName: "Profile") {
+			self.profiles = profiles
+			self.reloadTableView?()
 		}
 	}
 
@@ -80,34 +91,34 @@ extension ProfileListViewModel {
 
 	// Selection
 	func selectProfile(withUUID uuid: String) {
-		if selectedProfiles.count == 0 {
+		if selectedProfilesUUID.count == 0 {
 			selectionDidBegin?()
 		}
-		selectedProfiles.insert(uuid)
+		selectedProfilesUUID.insert(uuid)
 	}
 
 	func unselectProfile(withUUID uuid: String) {
-		selectedProfiles.remove(uuid)
-		if selectedProfiles.count == 0 {
+		selectedProfilesUUID.remove(uuid)
+		if selectedProfilesUUID.count == 0 {
 			selectionDidEnd?()
 		}
 	}
 
 	// Delete
 	func deleteSelectedProfiles() {
-		if selectedProfiles.isEmpty {
+		if selectedProfilesUUID.isEmpty {
 			return
 		}
 
-		for profileUUID in selectedProfiles {
+		for profileUUID in selectedProfilesUUID {
 			let predicate = NSPredicate(format: "uuid == %@", profileUUID)
 			coreDataAPIService.clearStorage(forEntity: "Profile", withPredicate: predicate)
 			profiles.removeAll(where: { profile in
 				profile.uuid == profileUUID
 			})
 		}
-		deleteProfiles?(selectedProfiles)
-		selectedProfiles.removeAll()
+		deleteProfiles?(selectedProfilesUUID)
+		selectedProfilesUUID.removeAll()
 		selectionDidEnd?()
 	}
 }

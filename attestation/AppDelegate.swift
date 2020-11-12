@@ -15,10 +15,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.
-		let profileListViewModel = ProfileListViewModel(withAPIService: CoreDataStorage.shared.apiService)
-		let mainController = HomeViewController(profileListViewModel: profileListViewModel) as UIViewController
-		let navigationController = UINavigationController(rootViewController: mainController)
+		let rootViewController: UIViewController?
+		let isAttestationActive = UserDefaults.standard.bool(forKey: UserDefaults.Attestation.isAttestationActiveKey)
 
+		if isAttestationActive {
+			rootViewController = AppDelegate.setupAttestationViewController()
+		} else {
+			rootViewController = AppDelegate.setupHomeViewController()
+		}
+		guard let strongRootViewController = rootViewController else {
+			return false
+		}
+
+		let navigationController = UINavigationController(rootViewController: strongRootViewController)
 		navigationController.navigationBar.isTranslucent = false
 		window = UIWindow(frame: UIScreen.main.bounds)
 		window?.rootViewController = navigationController
@@ -41,5 +50,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func applicationDidBecomeActive(_ application: UIApplication) {
 		// Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+	}
+}
+
+// MARK: - Public Methods
+extension AppDelegate {
+
+	static func setupHomeViewController() -> UIViewController {
+		let profileListViewModel = ProfileListViewModel(withAPIService: CoreDataStorage.shared.apiService)
+		return HomeViewController(profileListViewModel: profileListViewModel) as UIViewController
+	}
+
+	static func setupAttestationViewController() -> UIViewController {
+		let attestationSetViewModel = AttestationSetViewModel(qrCodeAPIService: QRCodeAPIService.shared)
+		return AttestationSetViewController(attestationSetViewModel: attestationSetViewModel)
 	}
 }

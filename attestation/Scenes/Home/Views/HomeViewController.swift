@@ -16,16 +16,29 @@ class HomeViewController: UIViewController {
 
 	// MARK: - Outlets
 	@IBOutlet weak var tableView: UITableView!
-	@IBOutlet weak var outingButton: UIButton!
+	@IBOutlet weak var outingButton: ActionButton!
 	@IBOutlet var trashButtonItem: UIBarButtonItem!
 
 	// Constraints
 	@IBOutlet weak var outingButtonBottomConstraint: NSLayoutConstraint!
 
 	// MARK: - Actions
+	@IBAction func goingOut(_ sender: ActionButton) {
+		UserDefaults.standard.setValue(true, forKey: UserDefaults.Attestation.isAttestationActiveKey)
+		let attestationCreationViewModel = profileListViewModel.attestationGenerationViewModel
+		let reasonsViewController = ReasonsViewController(attestationCreationViewModel: attestationCreationViewModel)
+		reasonsViewController.onWorkDone = { [weak self] success in
+			if success {
+				self?.displayAttestation()
+			}
+		}
+
+		navigationController?.present(reasonsViewController, animated: true, completion: nil)
+	}
+
 	@objc
 	func addProfile() {
-		let profileCreationViewModel = ProfileCreationViewModel(withAPIService: CoreDataStorage.shared.apiService)
+		let profileCreationViewModel = ProfileCreationViewModel()
 		let profileEditorViewController = ProfileEditorViewController(profileCreationViewModel: profileCreationViewModel)
 
 		navigationController?.pushViewController(profileEditorViewController, animated: true)
@@ -59,21 +72,25 @@ class HomeViewController: UIViewController {
 		super.viewDidLoad()
 
 		// Outing Button
-		profileListViewModel.selectionDidBegin = selectFirstProfile
-		profileListViewModel.selectionDidEnd = unselectLastProfile
-		profileListViewModel.deleteProfiles = deleteSelectedCells
-		outingButton.layer.cornerRadius = 8
-		outingButton.titleLabel?.setText("SORTIR", withSpacing: 2.0)
+		profileListViewModel.selectionDidBegin = { [weak self] in
+			self?.selectFirstProfile()
+		}
+		profileListViewModel.selectionDidEnd = { [weak self] in
+			self?.unselectLastProfile()
+		}
+		profileListViewModel.deleteProfiles = { [weak self] uuids in
+			self?.deleteSelectedCells(withUUIDS: uuids)
+		}
 		hideTrashAndOutingButton(false)
 
 		// Table View
-		tableView.delegate = self
-		tableView.dataSource = self
 		tableView.setupCellNib(type: ProfileTableViewCell.self, withIdentifier: ProfileTableViewCell.identifier)
 		tableView.setupCellNib(type: SectionTitleCell.self, withIdentifier: SectionTitleCell.identifier)
 
 		// Profile List View Model
-		profileListViewModel.reloadTableView = reloadTableView
+		profileListViewModel.reloadTableView = { [weak self] in
+			self?.tableView.reloadData()
+		}
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
@@ -83,6 +100,8 @@ class HomeViewController: UIViewController {
 		profileListViewModel.fetchProfiles()
 
 		// Navigation
+		navigationController?.isNavigationBarHidden = false
+
 		// Add
 		let addButtonItem = UIBarButtonItem(
 			barButtonSystemItem: .add,
@@ -107,8 +126,10 @@ class HomeViewController: UIViewController {
 // MARK: - Private Methods
 extension HomeViewController {
 
-	private func reloadTableView() {
-		tableView.reloadData()
+	private func displayAttestation() {
+		let attestationViewController = AppDelegate.setupAttestationViewController()
+
+		navigationController?.setViewControllers([attestationViewController], animated: true)
 	}
 
 	private func deleteSelectedCells(withUUIDS uuids: Set<String>) {
@@ -184,8 +205,9 @@ extension HomeViewController: UITableViewDataSource {
 		) as? ProfileTableViewCell else {
 			return UITableViewCell()
 		}
+		let profile = profileListViewModel.profile(atIndexPath: indexPath)
 
-		cell.setProfileData(profileListViewModel.profile(atIndexPath: indexPath))
+		cell.setProfileData(profile)
 		return cell
 	}
 

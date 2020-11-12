@@ -11,15 +11,13 @@
 		9C366D86254ECC45003376FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C366D85254ECC45003376FB /* Assets.xcassets */; };
 		9C366D89254ECC45003376FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C366D87254ECC45003376FB /* LaunchScreen.storyboard */; };
 		9C366D96254ED185003376FB /* ProfileListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C366D95254ED185003376FB /* ProfileListViewModel.swift */; };
-		9C366D9A254ED210003376FB /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C366D99254ED210003376FB /* Profile.swift */; };
-		9C366DA5254EE264003376FB /* AttestationPDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C366DA4254EE264003376FB /* AttestationPDF.swift */; };
+		9C366D9A254ED210003376FB /* Profile+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C366D99254ED210003376FB /* Profile+CoreData.swift */; };
 		9C366DA9254EE7B0003376FB /* certificate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9C366DA8254EE7B0003376FB /* certificate.pdf */; };
 		9C366DAE254F3A0D003376FB /* NSString+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C366DAD254F3A0D003376FB /* NSString+Utils.swift */; };
 		9C366DB5254F5AA8003376FB /* QRCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C366DB4254F5AA8003376FB /* QRCodeViewModel.swift */; };
 		9C366DC9255065B8003376FB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C366DC8255065B8003376FB /* HomeViewController.swift */; };
 		9C366DCE25506700003376FB /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C366DCD25506700003376FB /* ProfileTableViewCell.swift */; };
 		9C366DD72550678F003376FB /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C366DD62550678F003376FB /* ProfileTableViewCell.xib */; };
-		9C366DE025506A12003376FB /* Attestation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C366DDF25506A12003376FB /* Attestation.swift */; };
 		9C366DF42550B361003376FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C366DF32550B361003376FB /* Main.storyboard */; };
 		9C366DFC2550C320003376FB /* ProfileEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C366DFA2550C320003376FB /* ProfileEditorViewController.swift */; };
 		9C366E08255204A5003376FB /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C366E06255204A5003376FB /* TextFieldCell.swift */; };
@@ -28,6 +26,26 @@
 		9C366E0F25520811003376FB /* FormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C366E0E25520811003376FB /* FormViewModel.swift */; };
 		9C366E1325532AE0003376FB /* DatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C366E1125532AE0003376FB /* DatePickerCell.swift */; };
 		9C366E1425532AE0003376FB /* DatePickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C366E1225532AE0003376FB /* DatePickerCell.xib */; };
+		9C7B317B255AD6FB00F8DAB6 /* AttestationSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B3179255AD6FB00F8DAB6 /* AttestationSetViewController.swift */; };
+		9C7B317C255AD6FB00F8DAB6 /* AttestationSetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C7B317A255AD6FB00F8DAB6 /* AttestationSetViewController.xib */; };
+		9C7B317F255AD79D00F8DAB6 /* ActionButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C7B317E255AD79D00F8DAB6 /* ActionButton.xib */; };
+		9C7B3182255AD8B300F8DAB6 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B3181255AD8B300F8DAB6 /* ActionButton.swift */; };
+		9C7B3188255B0DA700F8DAB6 /* UIFont+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B3187255B0DA700F8DAB6 /* UIFont+Constants.swift */; };
+		9C7B318F255B142500F8DAB6 /* UserDefaults+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B318E255B142500F8DAB6 /* UserDefaults+Keys.swift */; };
+		9C7B3192255B194300F8DAB6 /* AttestationSetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B3191255B194300F8DAB6 /* AttestationSetViewModel.swift */; };
+		9C7B319A255B523500F8DAB6 /* AttestationSet+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B3198255B523500F8DAB6 /* AttestationSet+CoreData.swift */; };
+		9C7B31AA255B5B0900F8DAB6 /* ReasonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B31A9255B5B0900F8DAB6 /* ReasonsViewController.swift */; };
+		9C7B31AE255BCFE500F8DAB6 /* ReasonListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B31AD255BCFE500F8DAB6 /* ReasonListViewModel.swift */; };
+		9C7B31B1255BD1B200F8DAB6 /* Reason.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B31B0255BD1B200F8DAB6 /* Reason.swift */; };
+		9C7B31B5255BE34200F8DAB6 /* ReasonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B31B3255BE34200F8DAB6 /* ReasonTableViewCell.swift */; };
+		9C7B31B6255BE34200F8DAB6 /* ReasonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C7B31B4255BE34200F8DAB6 /* ReasonTableViewCell.xib */; };
+		9C7B31C0255C024400F8DAB6 /* ReasonsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C7B31BF255C024400F8DAB6 /* ReasonsViewController.xib */; };
+		9C7B31C9255C8CC300F8DAB6 /* AttestationSetCreationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B31C8255C8CC300F8DAB6 /* AttestationSetCreationViewModel.swift */; };
+		9C7B31E7255DBC7000F8DAB6 /* Attestation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B31E6255DBC7000F8DAB6 /* Attestation.swift */; };
+		9C7B31EE255DD90800F8DAB6 /* DateFormatter+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B31ED255DD90800F8DAB6 /* DateFormatter+Utils.swift */; };
+		9C7B31F4255DDE1500F8DAB6 /* AttestationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B31F2255DDE1500F8DAB6 /* AttestationCollectionViewCell.swift */; };
+		9C7B31F5255DDE1500F8DAB6 /* AttestationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C7B31F3255DDE1500F8DAB6 /* AttestationCollectionViewCell.xib */; };
+		9C7B31FA255DE10B00F8DAB6 /* UICollectionView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B31F9255DE10B00F8DAB6 /* UICollectionView+Utils.swift */; };
 		9C811FF8255433FD00921547 /* SectionTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C811FF6255433FD00921547 /* SectionTitleCell.swift */; };
 		9C811FF9255433FD00921547 /* SectionTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C811FF7255433FD00921547 /* SectionTitleCell.xib */; };
 		9C811FFC255447FC00921547 /* DatePickerKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C811FFB255447FC00921547 /* DatePickerKeyboard.swift */; };
@@ -50,15 +68,13 @@
 		9C366D88254ECC45003376FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C366D8A254ECC45003376FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C366D95254ED185003376FB /* ProfileListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileListViewModel.swift; sourceTree = "<group>"; };
-		9C366D99254ED210003376FB /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
-		9C366DA4254EE264003376FB /* AttestationPDF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttestationPDF.swift; sourceTree = "<group>"; };
+		9C366D99254ED210003376FB /* Profile+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreData.swift"; sourceTree = "<group>"; };
 		9C366DA8254EE7B0003376FB /* certificate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = certificate.pdf; sourceTree = "<group>"; };
 		9C366DAD254F3A0D003376FB /* NSString+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSString+Utils.swift"; sourceTree = "<group>"; };
 		9C366DB4254F5AA8003376FB /* QRCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewModel.swift; sourceTree = "<group>"; };
 		9C366DC8255065B8003376FB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9C366DCD25506700003376FB /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		9C366DD62550678F003376FB /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTableViewCell.xib; sourceTree = "<group>"; };
-		9C366DDF25506A12003376FB /* Attestation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attestation.swift; sourceTree = "<group>"; };
 		9C366DF32550B361003376FB /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9C366DFA2550C320003376FB /* ProfileEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditorViewController.swift; sourceTree = "<group>"; };
 		9C366E06255204A5003376FB /* TextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
@@ -67,6 +83,26 @@
 		9C366E0E25520811003376FB /* FormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewModel.swift; sourceTree = "<group>"; };
 		9C366E1125532AE0003376FB /* DatePickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerCell.swift; sourceTree = "<group>"; };
 		9C366E1225532AE0003376FB /* DatePickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerCell.xib; sourceTree = "<group>"; };
+		9C7B3179255AD6FB00F8DAB6 /* AttestationSetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttestationSetViewController.swift; sourceTree = "<group>"; };
+		9C7B317A255AD6FB00F8DAB6 /* AttestationSetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttestationSetViewController.xib; sourceTree = "<group>"; };
+		9C7B317E255AD79D00F8DAB6 /* ActionButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActionButton.xib; sourceTree = "<group>"; };
+		9C7B3181255AD8B300F8DAB6 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		9C7B3187255B0DA700F8DAB6 /* UIFont+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Constants.swift"; sourceTree = "<group>"; };
+		9C7B318E255B142500F8DAB6 /* UserDefaults+Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Keys.swift"; sourceTree = "<group>"; };
+		9C7B3191255B194300F8DAB6 /* AttestationSetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttestationSetViewModel.swift; sourceTree = "<group>"; };
+		9C7B3198255B523500F8DAB6 /* AttestationSet+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AttestationSet+CoreData.swift"; sourceTree = "<group>"; };
+		9C7B31A9255B5B0900F8DAB6 /* ReasonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReasonsViewController.swift; sourceTree = "<group>"; };
+		9C7B31AD255BCFE500F8DAB6 /* ReasonListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReasonListViewModel.swift; sourceTree = "<group>"; };
+		9C7B31B0255BD1B200F8DAB6 /* Reason.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reason.swift; sourceTree = "<group>"; };
+		9C7B31B3255BE34200F8DAB6 /* ReasonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReasonTableViewCell.swift; sourceTree = "<group>"; };
+		9C7B31B4255BE34200F8DAB6 /* ReasonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReasonTableViewCell.xib; sourceTree = "<group>"; };
+		9C7B31BF255C024400F8DAB6 /* ReasonsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReasonsViewController.xib; sourceTree = "<group>"; };
+		9C7B31C8255C8CC300F8DAB6 /* AttestationSetCreationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttestationSetCreationViewModel.swift; sourceTree = "<group>"; };
+		9C7B31E6255DBC7000F8DAB6 /* Attestation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attestation.swift; sourceTree = "<group>"; };
+		9C7B31ED255DD90800F8DAB6 /* DateFormatter+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Utils.swift"; sourceTree = "<group>"; };
+		9C7B31F2255DDE1500F8DAB6 /* AttestationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttestationCollectionViewCell.swift; sourceTree = "<group>"; };
+		9C7B31F3255DDE1500F8DAB6 /* AttestationCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttestationCollectionViewCell.xib; sourceTree = "<group>"; };
+		9C7B31F9255DE10B00F8DAB6 /* UICollectionView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Utils.swift"; sourceTree = "<group>"; };
 		9C811FF6255433FD00921547 /* SectionTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitleCell.swift; sourceTree = "<group>"; };
 		9C811FF7255433FD00921547 /* SectionTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionTitleCell.xib; sourceTree = "<group>"; };
 		9C811FFB255447FC00921547 /* DatePickerKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerKeyboard.swift; sourceTree = "<group>"; };
@@ -130,9 +166,10 @@
 		9C366D92254ED0F9003376FB /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9C366D99254ED210003376FB /* Profile.swift */,
-				9C366DDF25506A12003376FB /* Attestation.swift */,
+				9C7B31E5255DBC6200F8DAB6 /* CoreData */,
 				9C366E0B2552066C003376FB /* Form.swift */,
+				9C7B31B0255BD1B200F8DAB6 /* Reason.swift */,
+				9C7B31E6255DBC7000F8DAB6 /* Attestation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -148,12 +185,60 @@
 		9C366DAC254F39FD003376FB /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				9C7B31F9255DE10B00F8DAB6 /* UICollectionView+Utils.swift */,
 				9C366DAD254F3A0D003376FB /* NSString+Utils.swift */,
 				9C8120322555B03600921547 /* UITableView+Utils.swift */,
 				9C81205C2557DFF500921547 /* UILabel+Utils.swift */,
 				9C8120612557E68500921547 /* String+Utils.swift */,
+				9C7B31ED255DD90800F8DAB6 /* DateFormatter+Utils.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9C7B3194255B2EDA00F8DAB6 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				9C7B3191255B194300F8DAB6 /* AttestationSetViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9C7B31BA255BEFF700F8DAB6 /* Reasons */ = {
+			isa = PBXGroup;
+			children = (
+				9C7B31BB255BF00000F8DAB6 /* ViewModels */,
+				9C7B31BC255BF00600F8DAB6 /* Views */,
+			);
+			path = Reasons;
+			sourceTree = "<group>";
+		};
+		9C7B31BB255BF00000F8DAB6 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				9C7B31AD255BCFE500F8DAB6 /* ReasonListViewModel.swift */,
+				9C7B31C8255C8CC300F8DAB6 /* AttestationSetCreationViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9C7B31BC255BF00600F8DAB6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9C7B31A9255B5B0900F8DAB6 /* ReasonsViewController.swift */,
+				9C7B31BF255C024400F8DAB6 /* ReasonsViewController.xib */,
+				9C7B31B3255BE34200F8DAB6 /* ReasonTableViewCell.swift */,
+				9C7B31B4255BE34200F8DAB6 /* ReasonTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9C7B31E5255DBC6200F8DAB6 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				9C7B3198255B523500F8DAB6 /* AttestationSet+CoreData.swift */,
+				9C366D99254ED210003376FB /* Profile+CoreData.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		9C81200A25547EC900921547 /* Utility */ = {
@@ -178,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				9C81201E25555A1300921547 /* CoreDataAPIService.swift */,
+				9C366DB4254F5AA8003376FB /* QRCodeViewModel.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -187,7 +273,8 @@
 			children = (
 				9C81202F255584CF00921547 /* Common */,
 				9C81202A255583DE00921547 /* ProfileEditor */,
-				9C812028255583C200921547 /* PDF */,
+				9C812028255583C200921547 /* Attestation */,
+				9C7B31BA255BEFF700F8DAB6 /* Reasons */,
 				9C8120262555837B00921547 /* Home */,
 			);
 			path = Scenes;
@@ -213,19 +300,22 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		9C812028255583C200921547 /* PDF */ = {
+		9C812028255583C200921547 /* Attestation */ = {
 			isa = PBXGroup;
 			children = (
-				9C81202E2555847600921547 /* ViewModels */,
+				9C7B3194255B2EDA00F8DAB6 /* ViewModels */,
 				9C812029255583D000921547 /* Views */,
 			);
-			path = PDF;
+			path = Attestation;
 			sourceTree = "<group>";
 		};
 		9C812029255583D000921547 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9C366DA4254EE264003376FB /* AttestationPDF.swift */,
+				9C7B3179255AD6FB00F8DAB6 /* AttestationSetViewController.swift */,
+				9C7B317A255AD6FB00F8DAB6 /* AttestationSetViewController.xib */,
+				9C7B31F2255DDE1500F8DAB6 /* AttestationCollectionViewCell.swift */,
+				9C7B31F3255DDE1500F8DAB6 /* AttestationCollectionViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -268,14 +358,6 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		9C81202E2555847600921547 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				9C366DB4254F5AA8003376FB /* QRCodeViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 		9C81202F255584CF00921547 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,6 +365,8 @@
 				9C8120362555F76100921547 /* InputTableViewCell.swift */,
 				9C811FF6255433FD00921547 /* SectionTitleCell.swift */,
 				9C811FF7255433FD00921547 /* SectionTitleCell.xib */,
+				9C7B3181255AD8B300F8DAB6 /* ActionButton.swift */,
+				9C7B317E255AD79D00F8DAB6 /* ActionButton.xib */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -291,6 +375,8 @@
 			isa = PBXGroup;
 			children = (
 				9C812067255855BD00921547 /* UIImage+Constants.swift */,
+				9C7B3187255B0DA700F8DAB6 /* UIFont+Constants.swift */,
+				9C7B318E255B142500F8DAB6 /* UserDefaults+Keys.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -353,14 +439,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C366D89254ECC45003376FB /* LaunchScreen.storyboard in Resources */,
+				9C7B31C0255C024400F8DAB6 /* ReasonsViewController.xib in Resources */,
 				9C366DF42550B361003376FB /* Main.storyboard in Resources */,
 				9C366D86254ECC45003376FB /* Assets.xcassets in Resources */,
+				9C7B31B6255BE34200F8DAB6 /* ReasonTableViewCell.xib in Resources */,
 				9C366E1425532AE0003376FB /* DatePickerCell.xib in Resources */,
 				9C811FF9255433FD00921547 /* SectionTitleCell.xib in Resources */,
 				9C366DD72550678F003376FB /* ProfileTableViewCell.xib in Resources */,
 				9C366DA9254EE7B0003376FB /* certificate.pdf in Resources */,
+				9C7B317C255AD6FB00F8DAB6 /* AttestationSetViewController.xib in Resources */,
 				9C81205325575BD400921547 /* HomeViewController.xib in Resources */,
+				9C7B31F5255DDE1500F8DAB6 /* AttestationCollectionViewCell.xib in Resources */,
 				9C366E09255204A5003376FB /* TextFieldCell.xib in Resources */,
+				9C7B317F255AD79D00F8DAB6 /* ActionButton.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,31 +462,44 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C7B318F255B142500F8DAB6 /* UserDefaults+Keys.swift in Sources */,
+				9C7B31C9255C8CC300F8DAB6 /* AttestationSetCreationViewModel.swift in Sources */,
+				9C7B31EE255DD90800F8DAB6 /* DateFormatter+Utils.swift in Sources */,
 				9C8120332555B03600921547 /* UITableView+Utils.swift in Sources */,
-				9C366DA5254EE264003376FB /* AttestationPDF.swift in Sources */,
 				9C8120072554786C00921547 /* ProfileCreationViewModel.swift in Sources */,
 				9C81205D2557DFF500921547 /* UILabel+Utils.swift in Sources */,
+				9C7B31B5255BE34200F8DAB6 /* ReasonTableViewCell.swift in Sources */,
 				9C366DAE254F3A0D003376FB /* NSString+Utils.swift in Sources */,
 				9C811FFC255447FC00921547 /* DatePickerKeyboard.swift in Sources */,
-				9C366D9A254ED210003376FB /* Profile.swift in Sources */,
+				9C366D9A254ED210003376FB /* Profile+CoreData.swift in Sources */,
 				9C81200D25547EFE00921547 /* CoreDataStorage.swift in Sources */,
+				9C7B31AA255B5B0900F8DAB6 /* ReasonsViewController.swift in Sources */,
 				9C8120622557E68500921547 /* String+Utils.swift in Sources */,
 				9C366E1325532AE0003376FB /* DatePickerCell.swift in Sources */,
 				9C8120372555F76100921547 /* InputTableViewCell.swift in Sources */,
 				9C812068255855BD00921547 /* UIImage+Constants.swift in Sources */,
+				9C7B31FA255DE10B00F8DAB6 /* UICollectionView+Utils.swift in Sources */,
 				9C811FF8255433FD00921547 /* SectionTitleCell.swift in Sources */,
-				9C366DE025506A12003376FB /* Attestation.swift in Sources */,
+				9C7B317B255AD6FB00F8DAB6 /* AttestationSetViewController.swift in Sources */,
+				9C7B31B1255BD1B200F8DAB6 /* Reason.swift in Sources */,
 				9C366D96254ED185003376FB /* ProfileListViewModel.swift in Sources */,
+				9C7B31AE255BCFE500F8DAB6 /* ReasonListViewModel.swift in Sources */,
 				9C366D7D254ECC44003376FB /* AppDelegate.swift in Sources */,
 				9C812004255466B500921547 /* CoreDataStorage.xcdatamodeld in Sources */,
 				9C366E0C2552066C003376FB /* Form.swift in Sources */,
+				9C7B319A255B523500F8DAB6 /* AttestationSet+CoreData.swift in Sources */,
 				9C366DCE25506700003376FB /* ProfileTableViewCell.swift in Sources */,
 				9C81201F25555A1300921547 /* CoreDataAPIService.swift in Sources */,
 				9C366DC9255065B8003376FB /* HomeViewController.swift in Sources */,
 				9C366DFC2550C320003376FB /* ProfileEditorViewController.swift in Sources */,
+				9C7B3188255B0DA700F8DAB6 /* UIFont+Constants.swift in Sources */,
+				9C7B31E7255DBC7000F8DAB6 /* Attestation.swift in Sources */,
+				9C7B3182255AD8B300F8DAB6 /* ActionButton.swift in Sources */,
 				9C366E0F25520811003376FB /* FormViewModel.swift in Sources */,
+				9C7B31F4255DDE1500F8DAB6 /* AttestationCollectionViewCell.swift in Sources */,
 				9C366DB5254F5AA8003376FB /* QRCodeViewModel.swift in Sources */,
 				9C366E08255204A5003376FB /* TextFieldCell.swift in Sources */,
+				9C7B3192255B194300F8DAB6 /* AttestationSetViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -30,6 +30,7 @@ class DatePickerCell: UITableViewCell, InputCellable {
 		datePicker.datePicker.minimumDate = dateFormatter.date(from: "01/01/1899")
 		datePicker.datePicker.maximumDate = Date()
 		datePicker.datePicker.datePickerMode = .date
+		datePicker.datePicker.locale = Locale.current
 		return datePicker
 	}()
 	private lazy var dateFormatter: DateFormatter = {

@@ -8,15 +8,20 @@
 import CoreData
 
 class Profile: NSManagedObject {
-	@NSManaged var uuid: String
-	@NSManaged var firstName: String
-	@NSManaged var lastName: String
-	@NSManaged var birthDate: String
-	@NSManaged var birthCity: String
-	@NSManaged var address: String
-	@NSManaged var city: String
-	@NSManaged var zipCode: String
-	@NSManaged var numberOfAttestations: Int
+
+	@nonobjc public class func fetchRequest() -> NSFetchRequest<Profile> {
+		return NSFetchRequest<Profile>(entityName: "Profile")
+	}
+
+	@NSManaged public var address: String
+	@NSManaged public var birthCity: String
+	@NSManaged public var birthDate: String
+	@NSManaged public var city: String
+	@NSManaged public var firstName: String
+	@NSManaged public var lastName: String
+	@NSManaged public var numberOfAttestations: Int64
+	@NSManaged public var uuid: String
+	@NSManaged public var zipCode: String
 
 	var isFulfilled: Bool {
 		return !(firstName.isEmpty

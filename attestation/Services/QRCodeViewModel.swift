@@ -8,15 +8,25 @@
 import Foundation
 import UIKit
 
-class QRCodeViewModel: NSObject {
+protocol QRCodeAPIServicable {
 
+	// MARK: - Public Methods
+	func getQRCode(fromString: String) -> UIImage?
+}
+
+class QRCodeAPIService: NSObject, QRCodeAPIServicable {
+
+	// Singleton
+	static var shared = QRCodeAPIService()
+
+	// MARK: - Public Methods
 	func getQRCode(fromString string: String) -> UIImage? {
 		let data = string.data(using: .ascii)
 
 		if let filter = CIFilter(name: "CIQRCodeGenerator") {
 			filter.setValue(data, forKey: "inputMessage")
 			filter.setValue("M", forKey: "inputCorrectionLevel")
-			let transform = CGAffineTransform(scaleX: 2, y: 2)
+			let transform = CGAffineTransform(scaleX: 5, y: 5)
 
 			if let output = filter.outputImage?.transformed(by: transform) {
 				let qrCode = UIImage(ciImage: output)

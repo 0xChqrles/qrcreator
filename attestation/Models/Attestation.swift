@@ -2,41 +2,20 @@
 //  Attestation.swift
 //  attestation
 //
-//  Created by Charles Lanier on 02/11/2020.
+//  Created by Charles Lanier on 12/11/2020.
 //
 
-import CoreData
+import UIKit.UIImage
 
-class Attestation: NSManagedObject {
+class Attestation {
 
-	@NSManaged var id: String
-	@NSManaged var reasonsAsIntegers: [Int]
+	// MARK: - Public Properties
+	var qrCode: UIImage
+	var fullName: String
 
-	// MARK: - Getter/Setter
-	var reasons: [Reason] {
-		get {
-			return reasonsAsIntegers.compactMap {
-				Reason(rawValue: $0)
-			}
-		} set {
-			reasonsAsIntegers = newValue.map {
-				$0.rawValue
-			}
-		}
-	}
-
-	// MARK: - Enum
-	enum Reason: Int {
-		case work = 248
-		case food = 294
-		case health = 350
-		case family = 391
-		case disability = 431
-		case sportAndPets = 469
-		case convocation = 532
-		case missions = 571
-		case children = 616
-
-		static let allValues = [work, food, health, family, disability, sportAndPets, convocation, missions, children]
+	// MARK: - Initialization
+	init(qrCode: UIImage, fullName: String) {
+		self.qrCode = qrCode
+		self.fullName = fullName
 	}
 }

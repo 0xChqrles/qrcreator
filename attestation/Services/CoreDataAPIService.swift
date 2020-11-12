@@ -12,16 +12,20 @@ class CoreDataAPIService: NSObject {
 	func fetchEntities<T>(
 		ofType: T.Type,
 		withName entityName: String,
-		completion: @escaping (([T]?, Error?) -> ())
-	) {
+		withPredicate predicate: NSPredicate? = nil,
+		sortedBy sorts: [NSSortDescriptor]? = nil
+	) -> [T]? {
 		let managedContext = CoreDataStorage.shared.persistentContainer.viewContext
 		let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entityName)
 
+		fetchRequest.sortDescriptors = sorts
+		fetchRequest.predicate = predicate
 		do {
 			let entities = try managedContext.fetch(fetchRequest) as? [T]
-			completion(entities, nil)
+			return entities
 		} catch {
-			completion(nil, error)
+			print(error.localizedDescription)
+			return nil
 		}
 	}
 

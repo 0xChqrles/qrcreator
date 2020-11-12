@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19G73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AttestationSet" representedClassName=".AttestationSet" syncable="YES">
+        <attribute name="creationDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="reasonIdentifier" optional="YES" attributeType="String"/>
+        <relationship name="profiles" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Profile"/>
+    </entity>
     <entity name="Profile" representedClassName=".Profile" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String"/>
         <attribute name="birthCity" optional="YES" attributeType="String"/>
@@ -10,8 +15,14 @@
         <attribute name="numberOfAttestations" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="uuid" optional="YES" attributeType="String"/>
         <attribute name="zipCode" optional="YES" attributeType="String"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="uuid"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <elements>
+        <element name="AttestationSet" positionX="-63" positionY="54" width="128" height="88"/>
         <element name="Profile" positionX="-63" positionY="-18" width="128" height="178"/>
     </elements>
 </model>

@@ -1,17 +1,17 @@
 //
-//  UITableViewController+Util.swift
+//  UICollectionView+Utils.swift
 //  attestation
 //
-//  Created by Charles Lanier on 06/11/2020.
+//  Created by Charles Lanier on 12/11/2020.
 //
 
 import UIKit
 
-extension UITableView {
+extension UICollectionView {
 
 	func setupCellNib<T>(type: T.Type, withIdentifier identifier: String) {
 		let nib = UINib(nibName: String(describing: type.self), bundle: nil)
 
-		register(nib, forCellReuseIdentifier: identifier)
+		register(nib, forCellWithReuseIdentifier: identifier)
 	}
 }

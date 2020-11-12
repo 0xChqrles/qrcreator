@@ -12,9 +12,6 @@ protocol ProfileCreationViewModeling: class {
 	// MARK: - Closures
 	var updateProfileStatus: ((Bool) -> ())? { get set }
 
-	// MARK: - Initialization
-	init(withAPIService: CoreDataAPIService)
-
 	// MARK: - Public Methods
 	func value(forKey key: String) -> String?
 	func updateProfile(forKey: String, withValue: String)
@@ -30,7 +27,6 @@ class ProfileCreationViewModel: ProfileCreationViewModeling {
 	// MARK: - Private Properties
 	// CoreData
 	private let managedObjectContext = CoreDataStorage.shared.managedObjectContext
-	private let coreDataAPIService: CoreDataAPIService!
 
 	private lazy var profile: Profile? = {
 		if let entityDescription = NSEntityDescription.entity(forEntityName: "Profile", in: managedObjectContext) {
@@ -44,10 +40,6 @@ class ProfileCreationViewModel: ProfileCreationViewModeling {
 				updateProfileStatus?(isProfileFulfilled)
 			}
 		}
-	}
-
-	required init(withAPIService coreDataAPIService: CoreDataAPIService) {
-		self.coreDataAPIService = coreDataAPIService
 	}
 }
 
