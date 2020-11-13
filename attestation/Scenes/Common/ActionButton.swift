@@ -39,7 +39,7 @@ class ActionButton: UIButton {
 		cornerRadius = 8.0
 
 		// Colors
-		backgroundColor = UIColor(named: "SecondColor")
+		backgroundColor = UIColor(named: "AccentColor")
 		tintColor = .white
 
 		// Title

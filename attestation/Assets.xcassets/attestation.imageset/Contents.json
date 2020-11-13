@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "attestation.png",
+      "filename" : "attestation_1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "attestation@2x.png",
+      "filename" : "attestation_1@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "attestation@3x.png",
+      "filename" : "attestation_1@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
