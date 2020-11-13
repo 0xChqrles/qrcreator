@@ -55,11 +55,16 @@ extension ProfileCreationViewModel {
 			return
 		}
 
-		profile.setValue(value, forKey: key)
+		let trimmedValue = value.trimmingCharacters(in: .whitespacesAndNewlines)
+
+		profile.setValue(trimmedValue, forKey: key)
 		isProfileFulfilled = profile.isFulfilled
 	}
 
 	func saveProfile() {
+		if !(profile?.isFulfilled ?? false) {
+			return
+		}
 
 		profile?.firstName.capitalizeFirstLetter()
 		profile?.lastName.capitalizeFirstLetter()
