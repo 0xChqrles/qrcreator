@@ -118,6 +118,9 @@ extension ProfileListViewModel {
 			})
 		}
 		deleteProfiles?(selectedProfilesUUID)
+		if profiles.isEmpty {
+			reloadTableView?()
+		}
 		selectedProfilesUUID.removeAll()
 		selectionDidEnd?()
 	}

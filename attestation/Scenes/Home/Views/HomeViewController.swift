@@ -15,6 +15,7 @@ class HomeViewController: UIViewController {
 	private var profileListViewModel: ProfileListViewModeling!
 
 	// MARK: - Outlets
+	@IBOutlet weak var helpLabel: UILabel!
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var outingButton: ActionButton!
 	@IBOutlet var trashButtonItem: UIBarButtonItem!
@@ -71,6 +72,9 @@ class HomeViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
+		// Help Label
+		helpLabel.text = "Appuyer sur le symbole \"+\" en haut de l'écran pour créer un premier profil"
+
 		// Outing Button
 		profileListViewModel.selectionDidBegin = { [weak self] in
 			self?.selectFirstProfile()
@@ -90,6 +94,11 @@ class HomeViewController: UIViewController {
 		// Profile List View Model
 		profileListViewModel.reloadTableView = { [weak self] in
 			self?.tableView.reloadData()
+			if self?.tableView.numberOfRows(inSection: 0) ?? 0 > 0 {
+				self?.helpLabel.isHidden = true
+			} else {
+				self?.helpLabel.isHidden = false
+			}
 		}
 	}
 

@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="attestation" customModuleProvider="target">
             <connections>
+                <outlet property="helpLabel" destination="mht-tN-lyG" id="m3H-N9-ad4"/>
                 <outlet property="outingButton" destination="ATI-22-e55" id="isY-Mq-9tE"/>
                 <outlet property="outingButtonBottomConstraint" destination="OBQ-Du-Q8N" id="sS6-3H-6qh"/>
                 <outlet property="tableView" destination="LfR-GO-KiZ" id="Drg-Tk-G2E"/>
@@ -30,6 +31,12 @@
                         <outlet property="delegate" destination="-1" id="fSS-ID-sz4"/>
                     </connections>
                 </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mht-tN-lyG">
+                    <rect key="frame" x="32" y="435" width="350" height="26.5"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="22"/>
+                    <color key="textColor" name="SecondaryLabel"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ATI-22-e55" customClass="ActionButton" customModule="attestation" customModuleProvider="target">
                     <rect key="frame" x="180.5" y="824" width="53" height="30"/>
                     <color key="backgroundColor" name="SecondColor"/>
@@ -43,8 +50,11 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="LfR-GO-KiZ" secondAttribute="bottom" id="4Za-1w-y6g"/>
+                <constraint firstItem="paO-rG-YYw" firstAttribute="trailing" secondItem="mht-tN-lyG" secondAttribute="trailing" constant="32" id="L3f-Rd-G2T"/>
                 <constraint firstItem="paO-rG-YYw" firstAttribute="bottom" secondItem="ATI-22-e55" secondAttribute="bottom" constant="8" id="OBQ-Du-Q8N"/>
+                <constraint firstItem="mht-tN-lyG" firstAttribute="centerY" secondItem="Hgj-aD-ihZ" secondAttribute="centerY" id="Weh-ca-c0t"/>
                 <constraint firstItem="ATI-22-e55" firstAttribute="centerX" secondItem="Hgj-aD-ihZ" secondAttribute="centerX" id="Xuu-cM-X0h"/>
+                <constraint firstItem="mht-tN-lyG" firstAttribute="leading" secondItem="paO-rG-YYw" secondAttribute="leading" constant="32" id="fjd-Vr-KwK"/>
                 <constraint firstItem="paO-rG-YYw" firstAttribute="trailing" secondItem="LfR-GO-KiZ" secondAttribute="trailing" id="xKI-9G-Z5j"/>
                 <constraint firstItem="LfR-GO-KiZ" firstAttribute="top" secondItem="Hgj-aD-ihZ" secondAttribute="top" id="y1M-c6-kgs"/>
                 <constraint firstItem="LfR-GO-KiZ" firstAttribute="leading" secondItem="paO-rG-YYw" secondAttribute="leading" id="yYu-hD-eSs"/>
@@ -61,6 +71,9 @@
     <resources>
         <namedColor name="SecondColor">
             <color red="0.047058823529411764" green="0.80784313725490198" blue="0.38823529411764707" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SecondaryLabel">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
