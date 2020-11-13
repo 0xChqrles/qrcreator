@@ -32,7 +32,7 @@ class DatePickerKeyboard: UIView {
 		self.delegate = delegate
 		super.init(frame: .zero)
 		autoresizingMask = [.flexibleWidth, .flexibleHeight]
-		datePicker.date = Date()
+		datePicker.date = Date(timeIntervalSinceReferenceDate: 0)
 		datePicker.addTarget(self, action: #selector(datePickerValueChanged), for: .valueChanged)
 		addSubview(datePicker)
 
