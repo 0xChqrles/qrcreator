@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9C1EABDA255F03A200EB2BCE /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1EABD9255F03A200EB2BCE /* String+Utils.swift */; };
 		9C366D7D254ECC44003376FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C366D7C254ECC44003376FB /* AppDelegate.swift */; };
 		9C366D86254ECC45003376FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C366D85254ECC45003376FB /* Assets.xcassets */; };
 		9C366D89254ECC45003376FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C366D87254ECC45003376FB /* LaunchScreen.storyboard */; };
@@ -63,7 +62,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9C1EABD9255F03A200EB2BCE /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "String+Utils.swift"; path = "../Constants/String+Utils.swift"; sourceTree = "<group>"; };
 		9C366D79254ECC44003376FB /* Confined.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Confined.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C366D7C254ECC44003376FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C366D85254ECC45003376FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -187,7 +185,6 @@
 		9C366DAC254F39FD003376FB /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				9C1EABD9255F03A200EB2BCE /* String+Utils.swift */,
 				9C7B31F9255DE10B00F8DAB6 /* UICollectionView+Utils.swift */,
 				9C366DAD254F3A0D003376FB /* NSString+Utils.swift */,
 				9C8120322555B03600921547 /* UITableView+Utils.swift */,
@@ -494,7 +491,6 @@
 				9C366DCE25506700003376FB /* ProfileTableViewCell.swift in Sources */,
 				9C81201F25555A1300921547 /* CoreDataAPIService.swift in Sources */,
 				9C366DC9255065B8003376FB /* HomeViewController.swift in Sources */,
-				9C1EABDA255F03A200EB2BCE /* String+Utils.swift in Sources */,
 				9C366DFC2550C320003376FB /* ProfileEditorViewController.swift in Sources */,
 				9C7B3188255B0DA700F8DAB6 /* UIFont+Constants.swift in Sources */,
 				9C7B31E7255DBC7000F8DAB6 /* Attestation.swift in Sources */,

@@ -21,8 +21,10 @@ class QRCodeAPIService: NSObject, QRCodeAPIServicable {
 
 	// MARK: - Public Methods
 	func getQRCode(fromString string: String) -> UIImage? {
-		
-		let data = string.data(using: .ascii)
+		guard let data = string.ascii?.data(using: .ascii) else {
+			return nil
+		}
+
 		if let filter = CIFilter(name: "CIQRCodeGenerator") {
 			filter.setValue(data, forKey: "inputMessage")
 			filter.setValue("M", forKey: "inputCorrectionLevel")
