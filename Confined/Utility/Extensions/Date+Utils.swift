@@ -11,13 +11,14 @@ extension Date {
 
 	enum Format: String {
 		case date = "dd/MM/yyyy"
-		case hoursWithDots = "hh:mm"
-		case hoursWithLetter = "hh'h'mm"
+		case hoursWithDots = "HH:mm"
+		case hoursWithLetter = "HH'h'mm"
 	}
 
 	func toString(withFormat format: Format) -> String {
 		let dateFormatter = DateFormatter()
 
+		dateFormatter.locale = Locale(identifier: "fr_FR")
 		dateFormatter.dateFormat = format.rawValue
 		return dateFormatter.string(from: self)
 	}

@@ -42,7 +42,7 @@
 		9C7B31C0255C024400F8DAB6 /* ReasonsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C7B31BF255C024400F8DAB6 /* ReasonsViewController.xib */; };
 		9C7B31C9255C8CC300F8DAB6 /* AttestationSetCreationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B31C8255C8CC300F8DAB6 /* AttestationSetCreationViewModel.swift */; };
 		9C7B31E7255DBC7000F8DAB6 /* Attestation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B31E6255DBC7000F8DAB6 /* Attestation.swift */; };
-		9C7B31EE255DD90800F8DAB6 /* DateFormatter+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B31ED255DD90800F8DAB6 /* DateFormatter+Utils.swift */; };
+		9C7B31EE255DD90800F8DAB6 /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B31ED255DD90800F8DAB6 /* Date+Utils.swift */; };
 		9C7B31F4255DDE1500F8DAB6 /* AttestationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B31F2255DDE1500F8DAB6 /* AttestationCollectionViewCell.swift */; };
 		9C7B31F5255DDE1500F8DAB6 /* AttestationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C7B31F3255DDE1500F8DAB6 /* AttestationCollectionViewCell.xib */; };
 		9C7B31FA255DE10B00F8DAB6 /* UICollectionView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B31F9255DE10B00F8DAB6 /* UICollectionView+Utils.swift */; };
@@ -99,7 +99,7 @@
 		9C7B31BF255C024400F8DAB6 /* ReasonsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReasonsViewController.xib; sourceTree = "<group>"; };
 		9C7B31C8255C8CC300F8DAB6 /* AttestationSetCreationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttestationSetCreationViewModel.swift; sourceTree = "<group>"; };
 		9C7B31E6255DBC7000F8DAB6 /* Attestation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attestation.swift; sourceTree = "<group>"; };
-		9C7B31ED255DD90800F8DAB6 /* DateFormatter+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Utils.swift"; sourceTree = "<group>"; };
+		9C7B31ED255DD90800F8DAB6 /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
 		9C7B31F2255DDE1500F8DAB6 /* AttestationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttestationCollectionViewCell.swift; sourceTree = "<group>"; };
 		9C7B31F3255DDE1500F8DAB6 /* AttestationCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttestationCollectionViewCell.xib; sourceTree = "<group>"; };
 		9C7B31F9255DE10B00F8DAB6 /* UICollectionView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Utils.swift"; sourceTree = "<group>"; };
@@ -190,7 +190,7 @@
 				9C8120322555B03600921547 /* UITableView+Utils.swift */,
 				9C81205C2557DFF500921547 /* UILabel+Utils.swift */,
 				9C8120612557E68500921547 /* String+Utils.swift */,
-				9C7B31ED255DD90800F8DAB6 /* DateFormatter+Utils.swift */,
+				9C7B31ED255DD90800F8DAB6 /* Date+Utils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -464,7 +464,7 @@
 			files = (
 				9C7B318F255B142500F8DAB6 /* UserDefaults+Keys.swift in Sources */,
 				9C7B31C9255C8CC300F8DAB6 /* AttestationSetCreationViewModel.swift in Sources */,
-				9C7B31EE255DD90800F8DAB6 /* DateFormatter+Utils.swift in Sources */,
+				9C7B31EE255DD90800F8DAB6 /* Date+Utils.swift in Sources */,
 				9C8120332555B03600921547 /* UITableView+Utils.swift in Sources */,
 				9C8120072554786C00921547 /* ProfileCreationViewModel.swift in Sources */,
 				9C81205D2557DFF500921547 /* UILabel+Utils.swift in Sources */,
