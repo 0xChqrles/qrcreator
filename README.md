@@ -3,11 +3,10 @@
 
 # Confined
 
-![Confined](https://raw.githubusercontent.com/charleslanier/confined/master/Screenshots/Home-6.5.png)
-![Confined](https://raw.githubusercontent.com/charleslanier/confined/master/Screenshots/QRCode-6.5.png)
-![Confined](https://raw.githubusercontent.com/charleslanier/confined/master/Screenshots/NewProfile-6.5.png)
+<img width="220" src="https://raw.githubusercontent.com/charleslanier/confined/master/Screenshots/Home-6.5.png" /> <img width="220" src="https://raw.githubusercontent.com/charleslanier/confined/master/Screenshots/QRCode-6.5.png" /> <img width="220" src="https://raw.githubusercontent.com/charleslanier/confined/master/Screenshots/NewProfile-6.5.png" />
 
 A useful iOS application to easily create QR Codes which allow you to leave your residency during the second lockdown in France.
+For the moment, Apple refuses to distribute it on the AppStore.
 
 ### Requirements
 
