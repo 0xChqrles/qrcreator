@@ -1,7 +1,7 @@
 ![Language](https://img.shields.io/badge/swift-5-brightgreen.svg)
 ![License](https://img.shields.io/github/license/JakeLin/SwiftWeather.svg?style=flat)
 
-# Confined
+# QR Creator
 
 <img width="220" src="https://raw.githubusercontent.com/charleslanier/confined/master/Screenshots/Home-6.5.png" /> <img width="220" src="https://raw.githubusercontent.com/charleslanier/confined/master/Screenshots/QRCode-6.5.png" /> <img width="220" src="https://raw.githubusercontent.com/charleslanier/confined/master/Screenshots/NewProfile-6.5.png" />
 

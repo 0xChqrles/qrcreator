@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AttestationSetViewController" customModule="Confined" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="C1M-qj-Nsu" id="NYn-UK-Zdc"/>
+                <outlet property="returningHomeButton" destination="NJC-SQ-oYq" id="IT6-fI-6hO"/>
+                <outlet property="returningHomeButtonBottomConstraint" destination="dqy-ah-VbL" id="WuV-QA-YW6"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="C1M-qj-Nsu">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gMV-9P-wwW">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="ANK-HL-i0B"/>
+                        <outlet property="delegate" destination="-1" id="gFk-Gj-4f0"/>
+                    </connections>
+                </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJC-SQ-oYq" customClass="ActionButton" customModule="Confined" customModuleProvider="target">
+                    <rect key="frame" x="107" y="804" width="200" height="50"/>
+                    <color key="backgroundColor" name="SecondColor"/>
+                    <state key="normal" title="SUPPRIMER"/>
+                    <connections>
+                        <action selector="returningHome:" destination="-1" eventType="touchUpInside" id="oCl-p7-QPp"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="C1M-qj-Nsu" secondAttribute="trailing" id="3rA-nQ-86Z"/>
+                <constraint firstItem="C1M-qj-Nsu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="SGn-Ba-uC8"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="NJC-SQ-oYq" secondAttribute="bottom" constant="8" id="dqy-ah-VbL"/>
+                <constraint firstItem="NJC-SQ-oYq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="j6E-ZJ-8ay"/>
+                <constraint firstAttribute="bottom" secondItem="C1M-qj-Nsu" secondAttribute="bottom" id="kem-Zj-dDO"/>
+                <constraint firstItem="C1M-qj-Nsu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="tpQ-dr-47r"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="110.49107142857143"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="NJC-SQ-oYq">
+            <size key="intrinsicContentSize" width="84" height="30"/>
+        </designable>
+    </designables>
+    <resources>
+        <namedColor name="SecondColor">
+            <color red="0.047058823529411764" green="0.80784313725490198" blue="0.38823529411764707" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
