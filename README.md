@@ -23,7 +23,7 @@ Want to contribute? Feel free to Fork, edit, then pull!
 
 ### Privacy Policy and Support
 
-find out more about privacy policy and support [here](https://charleslanier.github.io/confined)
+find out more about privacy policy and support [here](https://charleslanier.github.io/qrcreator)
 
 ### MIT License
 
